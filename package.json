@@ -1,0 +1,23 @@
+{
+  "name": "react-native-tabbar-navigator",
+  "version": "0.1.0",
+  "description": "A component which builds excellent Navigator + TabBar based application, have a good solution for implementing hidesBottomBarWhenPushed in iOS.",
+  "main": "MainNavigator.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DickyT/react-native-tabbar-navigator.git"
+  },
+  "keywords": [
+    "react",
+    "react-native",
+    "tabbar",
+    "navigator",
+    "ios"
+  ],
+  "author": "DickyT",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DickyT/react-native-tabbar-navigator/issues"
+  },
+  "homepage": "https://github.com/DickyT/react-native-tabbar-navigator#readme"
+}
