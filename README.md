@@ -111,7 +111,7 @@ And you can run the new project in XCode.
 
 Configurations
 ------------------------------------
-The **`<TabBarNavigator \>`** object can take the following props:
+The **`<TabBarNavigator/>`** object can take the following props:
 - `navTintColor`: The color of the text in Navigation Bar
 - `navBarTintColor`: The background color of the Navigation Bar
 - `tabTintColor`: The highlight color of the Tab Bar Item
@@ -145,5 +145,7 @@ Feel free to request new features, just create an issue.
 It will be very welcome to pull request for me.
 
 My email ```me@idickyt.com```
+
 Facebook [Dicky Tsang](https://www.facebook.com/idickytsang)
+
 Sina Weibo ```@桐乃```
