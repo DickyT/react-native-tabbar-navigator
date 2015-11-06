@@ -87,6 +87,28 @@ Advanced usage
 ------------------------------------
 For more advanced examples, please check out the example app.
 
+How to run the example App?
+------------------------------------
+Just open the project file ```TabBarNavigatorExample/ios/TabBarNavigatorExample.xcodeproj```, and the demo will runs.
+
+If the Simulator said that the server is not running, you can run the npm server yourself, just run the command in the terminal.
+
+```
+sh The/Place/You/Put/The/Example/In/TabBarNavigatorExample/node_modules/react-native/packager/packager.sh
+```
+
+If you still cannot run the example, you can just create a new react native project by
+```
+react-native init TabBarNavigatorExample
+```
+Then ```cd`` into your root directory of the new project
+```
+npm install react-native-tabbar-navigator
+```
+Then you can copy the `index.ios.js` in my TabBarNavigatorExample and be sure to cover the default one.
+
+And you can run the new project in XCode.
+
 Configurations
 ------------------------------------
 The **`<TabBarNavigator \>`** object can take the following props:
