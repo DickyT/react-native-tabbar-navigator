@@ -18,12 +18,12 @@ Installation
 
 Usage
 -----
-```
+```jsx
 import TabBarNavigator from 'react-native-tabbar-navigator';
 ```
 
 ### The basic usages:
-```
+```jsx
 <TabBarNavigator
   navTintColor='ffffff'
   navBarTintColor='333333'
@@ -45,14 +45,14 @@ import TabBarNavigator from 'react-native-tabbar-navigator';
 in this case, ```<TabTwo/>```
 
 #### Pushing a view
-```
+```jsx
 this.props.navigator.push({
   title: 'New Page',
   component: <NewPage/>
 });
 ```
 #### Changing the Navigator Bar Button
-```
+```jsx
 class TabTwo extends React.Component {
   constructor(props) {
     super(props);
@@ -95,16 +95,16 @@ Just open the project file ```TabBarNavigatorExample/ios/TabBarNavigatorExample.
 
 If the Simulator said that the server is not running, you can run the npm server yourself, just run the command in the terminal.
 
-```
+```bash
 sh The/Place/You/Put/The/Example/In/TabBarNavigatorExample/node_modules/react-native/packager/packager.sh
 ```
 
 If you still cannot run the example, you can just create a new react native project by
-```
+```bash
 react-native init TabBarNavigatorExample
 ```
 Then ```cd`` into your root directory of the new project
-```
+```bash
 npm install react-native-tabbar-navigator
 ```
 Then you can copy the `index.ios.js` in my TabBarNavigatorExample and be sure to cover the default one.
@@ -119,7 +119,7 @@ The **`<TabBarNavigator/>`** object can take the following props:
 - `tabTintColor`: The highlight color of the Tab Bar Item
 - `tabBarTintColor`: The background color of the Tab Bar
 - `onChange`: You can add your callback function here, it will be called once the selected tab is changed. It will bring you an ```Integer``` index when calling. Use like this way ```<TabBarNavigator onChange={callbackFunction} />``` and
-```
+```jsx
 function callbackFunction(index) {
     console.log(`selected index ${index}`);
 }
