@@ -2,7 +2,7 @@ React Native TabBar Navigator (iOS only)
 ===================
 A component which builds excellent Navigator + TabBar based application, have a good solution for implementing hidesBottomBarWhenPushed in iOS.
 
-You can test the sample code in React Native Playground
+You can check out the sample App in React Native Playground
 [https://rnplay.org/apps/XCZoBw](https://rnplay.org/apps/XCZoBw)
 
 ![react-native-tab](https://cloud.githubusercontent.com/assets/4535844/10962370/08ccac96-836e-11e5-9916-b984095f5168.gif)
@@ -132,8 +132,8 @@ The **`this.props.navigator.setNavItems()`** takes one ```Object``` which can ha
 - `rightItem`: Takes an ```Object```, parameters below
 
 The `leftItem` and the `rightItem` takes the same parameters:
-- `component`: The component you want to render
-- `event`: Takes a callback method, once the item clicked, it will be called. If is the Left Item, it will also passing an ```popHelper()``` back, call it when you want to pop the current page.
+- `component` (required): The component you want to render
+- `event` (required): Takes a callback method, once the item clicked, it will be called. If is the Left Item, it will also passing an ```popHelper()``` back, call it when you want to pop the current page.
 
 Questions
 --------------
