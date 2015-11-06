@@ -2,6 +2,9 @@ React Native TabBar Navigator (iOS only)
 ===================
 A component which builds excellent Navigator + TabBar based application, have a good solution for implementing hidesBottomBarWhenPushed in iOS.
 
+You can test the sample code in React Native Playground
+[https://rnplay.org/apps/XCZoBw](https://rnplay.org/apps/XCZoBw)
+
 ![react-native-tab](https://cloud.githubusercontent.com/assets/4535844/10962370/08ccac96-836e-11e5-9916-b984095f5168.gif)
 
 Install
