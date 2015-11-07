@@ -87,7 +87,6 @@ class TabBarNavigator extends Component {
   popThisNavigator(navigator) {
     this.resetNavItems();
     this.forceReRender();
-    console.log('hi');
     navigator.pop();
   }
   resetNavItems() {
