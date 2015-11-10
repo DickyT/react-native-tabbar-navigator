@@ -7,6 +7,7 @@ const {
   Text,
   View,
   TouchableOpacity,
+  SegmentedControlIOS,
   AlertIOS,
   Image
 } = React;
@@ -72,6 +73,18 @@ class AnotherNewPage extends Component {
         event: function() {
           AlertIOS.alert('The event comes from Share Button on NavBar');
         }.bind(this)
+      },
+      title:{
+        component: (
+          <View
+            style={styles.segmentControlContainer} >
+            <SegmentedControlIOS
+                style={ styles.segmentControl }
+                values={['Pinned', 'All']}
+                selectedIndex={1}
+            />
+          </View>
+        )
       }
     });
   }
@@ -187,5 +200,16 @@ class TabBarNavigatorExample extends Component {
     );
   }
 }
+
+var styles = StyleSheet.create({
+    segmentControlContainer: {
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
+    segmentControl: {
+        width: 160
+    }
+});
 
 React.AppRegistry.registerComponent('TabBarNavigatorExample', () => TabBarNavigatorExample);
