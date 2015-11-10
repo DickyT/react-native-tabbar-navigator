@@ -8,6 +8,7 @@ const {
   View,
   Navigator,
   TouchableOpacity,
+  SegmentedControlIOS,
   Image
 } = React;
 
@@ -73,11 +74,11 @@ class TabBarNavigator extends Component {
         }
       },
       Title(route, navigator, index, navState) {
-        return (
-          <Text style={{flex: 1, justifyContent: 'center', color: self.props.navTintColor ? self.props.navTintColor : 'ffffff', marginTop: 12, fontSize: 18}}>
-            {route.isRoot ? self.state.rootNavigatorTitle : route.title}
-          </Text>
-        );
+        if (route.navItems && route.navItems.title) {
+          return React.cloneElement(route.navItems.title.component, {
+            onPress: () => {route.navItems.rightItem.event()}
+          });
+        }
       }
     };
   }
