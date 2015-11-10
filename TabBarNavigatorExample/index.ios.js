@@ -7,6 +7,7 @@ const {
   Text,
   View,
   TouchableOpacity,
+  SegmentedControlIOS,
   AlertIOS,
   Image
 } = React;
@@ -72,6 +73,21 @@ class AnotherNewPage extends Component {
         event: function() {
           AlertIOS.alert('The event comes from Share Button on NavBar');
         }.bind(this)
+      },
+      title:{
+        component: (
+          <View
+            style={styles.segmentControlContainer} >
+            <SegmentedControlIOS
+                style={ styles.segmentControl }
+                values={['Pinned', 'All']}
+                selectedIndex={1}
+            />
+          </View>
+        ),
+        event: function() {
+
+        }
       }
     });
   }
@@ -103,6 +119,13 @@ class NewPage extends Component {
   constructor(props) {
     super(props);
     this.props.navComponent.setNavItems({
+      title: {
+        component: (
+          <Text style={{flex: 1, justifyContent: 'center', color: 'ffffff', marginTop: 12, fontSize: 18}}>
+            New Page
+          </Text>
+        )
+      },
       rightItem: {
         component: (
           <TouchableOpacity style={[style.navItem, {marginRight: 7}]}>
@@ -140,6 +163,36 @@ class NewPage extends Component {
 }
 
 class TabTwo extends Component {
+  constructor(props) {
+    super(props);
+    this.props.navComponent.setNavItems({
+      title: {
+        component: (
+          <View
+            style={styles.segmentControlContainer} >
+            <SegmentedControlIOS
+                style={ styles.segmentControl }
+                values={['One', 'Two']}
+                selectedIndex={1}
+            />
+          </View>
+        ),
+        event: function() {
+
+        }
+      },
+      rightItem: {
+        component: (
+          <TouchableOpacity style={[style.navItem, {marginRight: 7}]}>
+            <Image style={{width: 20, height: 20}} source={{uri: shareImg}}/>
+          </TouchableOpacity>
+        ),
+        event: function() {
+          AlertIOS.alert('The event comes from Share Button on NavBar');
+        }.bind(this)
+      }
+    });
+  }
   pushPage() {
     this.props.navigator.push({
       title: 'New Page',
@@ -187,5 +240,16 @@ class TabBarNavigatorExample extends Component {
     );
   }
 }
+
+var styles = StyleSheet.create({
+    segmentControlContainer: {
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
+    segmentControl: {
+        width: 160
+    }
+});
 
 React.AppRegistry.registerComponent('TabBarNavigatorExample', () => TabBarNavigatorExample);
