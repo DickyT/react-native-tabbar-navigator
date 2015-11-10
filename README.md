@@ -10,6 +10,11 @@ You can check out the sample App in React Native Playground
 
 ![react-native-tab](https://cloud.githubusercontent.com/assets/4535844/10962370/08ccac96-836e-11e5-9916-b984095f5168.gif)
 
+## UPDATEs
+0.1.3 New feature by `@aerofs`, title component can be customize now.
+
+0.1 Project First Commit
+
 Installation
 -------
 
@@ -52,7 +57,7 @@ this.props.navigator.push({
   component: <NewPage/>
 });
 ```
-#### Changing the Navigator Bar Button
+#### Changing the Navigator Bar Button, and customizing title component
 ```jsx
 class TabTwo extends React.Component {
   constructor(props) {
@@ -79,6 +84,17 @@ class TabTwo extends React.Component {
         event: function() {
           AlertIOS.alert('The event comes from Share Button on NavBar');
         }.bind(this)
+      },
+      title: {
+        component: (
+          <View>
+            <SegmentedControlIOS
+                style={ styles.segmentControl }
+                values={['Pinned', 'All']}
+                selectedIndex={1}
+            />
+          </View>
+        )
       }
     });
   }
@@ -133,6 +149,7 @@ The **`this.props.navigator.push()`** takes one ```Object``` which can have the 
 The **`this.props.navigator.setNavItems()`** takes one ```Object``` which can have the following keys:
 - `leftItem`: Takes an ```Object```, parameters below
 - `rightItem`: Takes an ```Object```, parameters below
+- `title`: Taks **ONLY** `component` parameters ,if you do not specify, and default will be uesed
 
 The `leftItem` and the `rightItem` takes the same parameters:
 - `component` (required): The component you want to render
