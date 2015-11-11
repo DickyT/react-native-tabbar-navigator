@@ -11,6 +11,8 @@ You can check out the sample App in React Native Playground
 ![react-native-tab](https://cloud.githubusercontent.com/assets/4535844/10962370/08ccac96-836e-11e5-9916-b984095f5168.gif)
 
 ## UPDATEs
+0.1.4 Fixed a logical bug which caused a re-render issue.
+
 0.1.3 New feature by `@aerofs`, title component can be customize now.
 
 0.1 Project First Commit
