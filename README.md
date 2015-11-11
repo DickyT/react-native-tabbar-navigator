@@ -8,9 +8,11 @@ A component which builds excellent Navigator(NavigationController) + TabBar(TabB
 You can check out the sample App in React Native Playground
 [https://rnplay.org/apps/XCZoBw](https://rnplay.org/apps/XCZoBw)
 
-![react-native-tab](https://cloud.githubusercontent.com/assets/4535844/10962370/08ccac96-836e-11e5-9916-b984095f5168.gif)
+![react-native-tab](https://cloud.githubusercontent.com/assets/4535844/11086164/84be9b10-8824-11e5-8cf3-69ce3d01cb57.gif)
 
 ## UPDATEs
+0.1.4 Fixed a logical bug which caused a re-render issue.
+
 0.1.3 New feature by `@aerofs`, title component can be customize now.
 
 0.1 Project First Commit

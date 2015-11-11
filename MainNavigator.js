@@ -55,14 +55,7 @@ class TabBarNavigator extends Component {
               <TouchableOpacity style={style.leftBackButton} onPress={() => {
                 self.popThisNavigator(navigator);
               }}>
-                <View style={{width: 44, height: 44, justifyContent: 'center', alignItems: 'center'}}>
-                  <Icon
-                    name={'fontawesome|angle-left'}
-                    size={30}
-                    color='ffffff'
-                    style={{width: 30, height: 30}}
-                    />
-                </View>
+                <Image style={{width: 20, height: 20}} source={{uri: backArrow}}/>
               </TouchableOpacity>
             );
           }
