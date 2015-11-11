@@ -108,7 +108,9 @@ For more advanced examples, please check out the example app.
 
 How to run the example App?
 ------------------------------------
-Just open the project file ```TabBarNavigatorExample/ios/TabBarNavigatorExample.xcodeproj```, and run it in XCode.
+Goto the example root directory, run
+```npm install```
+And open the project file ```TabBarNavigatorExample/ios/TabBarNavigatorExample.xcodeproj```, and run it in XCode.
 
 If the Simulator said that the server is not running, you can run the npm server yourself, just run the command in the terminal.
 
