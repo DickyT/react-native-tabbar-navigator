@@ -46,12 +46,15 @@ class MainTabBar extends Component {
       selectedTab: defaultTabIndex
     });
     this.props.navComponent.currentTabIndex = defaultTabIndex;
+    this.props.navComponent.setState({
+      rootNavigatorTitle: this.tabBarData[defaultTabIndex].title
+    });
   }
   switchTab(tabId, tabTitle, currentTabIndex) {
-    console.log('tabId: ' + tabId + ', currentTabIndex: ' + currentTabIndex);
     this.props.navComponent.currentTabIndex = currentTabIndex;
     this.props.navComponent.setState({
-      currentTabIndex: currentTabIndex
+      currentTabIndex: currentTabIndex,
+      rootNavigatorTitle: tabTitle
     });
     this.props.navComponent.forceUpdate();
     this.setState({

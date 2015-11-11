@@ -176,11 +176,11 @@ class TabOne extends Component {
   render() {
     return (
       <View style={style.tabContentStyle}>
-            <Text style={style.textStyle}>This is the content of Tab 1</Text>
-            <Text style={style.textStyle}>Automatically marginTop = 64</Text>
-            <Text style={style.textStyle}>TabBarNavigator.Item is the OnlyChild</Text>
-            <Text style={style.textStyle}>You can wrap everything inside {'<View></View>'}</Text>
-            <Text style={style.textStyle}>Slide to back is fully supported</Text>
+        <Text style={style.textStyle}>This is the content of Tab 1</Text>
+        <Text style={style.textStyle}>Automatically marginTop = 64</Text>
+        <Text style={style.textStyle}>TabBarNavigator.Item is the OnlyChild</Text>
+        <Text style={style.textStyle}>You can wrap everything inside {'<View></View>'}</Text>
+        <Text style={style.textStyle}>Slide to back is fully supported</Text>
       </View> 
     );
   }
