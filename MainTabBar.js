@@ -1,7 +1,7 @@
 'use strict';
 
-import React from 'react-native';
-const {
+var React = require('react-native');
+var {
   Component,
   StyleSheet,
   Text,
