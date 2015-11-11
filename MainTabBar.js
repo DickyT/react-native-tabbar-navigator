@@ -1,7 +1,7 @@
 'use strict';
 
-import React from 'react-native';
-const {
+var React = require('react-native');
+var {
   Component,
   StyleSheet,
   Text,
@@ -23,6 +23,8 @@ class MainTabBar extends Component {
     this.state = {
       selectedTab: 0
     };
+  }
+  componentWillMount() {
     this.configureTabBar();
   }
   configureTabBar() {
@@ -43,18 +45,17 @@ class MainTabBar extends Component {
     this.setState({
       selectedTab: defaultTabIndex
     });
-    this.props.navComponent.setNavigatorTitle(this.tabBarData[defaultTabIndex] ? this.tabBarData[defaultTabIndex].title : '');
-    this.props.navComponent.setState({
-      currentTabIndex: defaultTabIndex
-    });
+    this.props.navComponent.currentTabIndex = defaultTabIndex;
   }
-  switchTab(tabName, tabTitle, currentTabIndex) {
-    this.setState({
-      selectedTab: tabName
-    });
-    this.props.navComponent.setNavigatorTitle(tabTitle);
+  switchTab(tabId, tabTitle, currentTabIndex) {
+    console.log('tabId: ' + tabId + ', currentTabIndex: ' + currentTabIndex);
+    this.props.navComponent.currentTabIndex = currentTabIndex;
     this.props.navComponent.setState({
       currentTabIndex: currentTabIndex
+    });
+    this.props.navComponent.forceUpdate();
+    this.setState({
+      selectedTab: tabId
     });
   }
   renderTabBarItems() {
