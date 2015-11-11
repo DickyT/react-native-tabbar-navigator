@@ -11,9 +11,11 @@ You can check out the sample App in React Native Playground
 ![react-native-tab](https://cloud.githubusercontent.com/assets/4535844/11086164/84be9b10-8824-11e5-8cf3-69ce3d01cb57.gif)
 
 ## UPDATEs
-0.1.4 Fixed a logical bug which caused a re-render issue.
+0.2.4 Fixed a logical bug which caused a re-render issue.
 
-0.1.3 New feature by `@aerofs`, title component can be customize now.
+0.2.3 New feature by `@aerofs`, title component can be customize now.
+
+0.2 Stable Version
 
 0.1 Project First Commit
 
@@ -112,7 +114,10 @@ How to run the example App?
 ------------------------------------
 Goto the example root directory, run
 ```npm install```
+and
+```npm start```
 And open the project file ```TabBarNavigatorExample/ios/TabBarNavigatorExample.xcodeproj```, and run it in XCode.
+
 
 If the Simulator said that the server is not running, you can run the npm server yourself, just run the command in the terminal.
 
