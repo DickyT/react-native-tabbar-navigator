@@ -1,6 +1,6 @@
 {
   "name": "react-native-tabbar-navigator",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A component which builds excellent Navigator + TabBar based application, have a good solution for implementing hidesBottomBarWhenPushed in iOS.",
   "main": "MainNavigator.js",
   "repository": {
