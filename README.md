@@ -104,7 +104,7 @@ class TabTwo extends React.Component {
   }
 }
 ```
-___You can only change the Navigator Bar Buttons in the ```constructor``` (ES6) of the subviews, or ```componentWillMount```___
+___You can change the Navigator Bar Buttons whenever you like, but manage the original title/component at your own___
 
 Advanced usage
 ------------------------------------
