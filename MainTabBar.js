@@ -40,38 +40,42 @@ class MainTabBar extends Component {
         defaultTabIndex = index;
       }
     }.bind(this));
-    this.state = {
+    this.setState({
       selectedTab: defaultTabIndex
-    };
+    });
     this.props.navComponent.setNavigatorTitle(this.tabBarData[defaultTabIndex] ? this.tabBarData[defaultTabIndex].title : '');
+    this.props.navComponent.setState({
+      currentTabIndex: defaultTabIndex
+    });
   }
-  switchTab(tabName, tabTitle) {
+  switchTab(tabName, tabTitle, currentTabIndex) {
     this.setState({
       selectedTab: tabName
     });
     this.props.navComponent.setNavigatorTitle(tabTitle);
-    if (this.props.onChange) {
-      this.props.onChange(this.state.selectedTab);
-    }
+    this.props.navComponent.setState({
+      currentTabIndex: currentTabIndex
+    });
   }
   renderTabBarItems() {
     var items = [];
     var self = this;
-    this.tabBarData.map(function(eachData) {
+    for (var i = 0; i < this.tabBarData.length; i++) {
+      var eachData = this.tabBarData[i];
       var eachComponent = React.cloneElement(eachData.component, {
-        navigator: self.props.navigator,
-        navComponent: self.props.navComponent
+        navigator: this.props.navigator,
+        navComponent: this.props.navComponent
       });
       items.push(
         <TabBarIOS.Item
           title={eachData.title}
           icon={eachData.icon}
           selected={self.state.selectedTab === eachData.id}
-          onPress={self.switchTab.bind(self, eachData.id, eachData.title)}>
+          onPress={self.switchTab.bind(self, eachData.id, eachData.title, i)}>
           {eachComponent}
         </TabBarIOS.Item>
       );
-    });
+    }
     return items;
   }
   render() {

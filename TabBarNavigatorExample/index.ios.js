@@ -153,6 +153,21 @@ class NewPage extends Component {
 }
 
 class TabTwo extends Component {
+  constructor(props) {
+    super(props);
+    this.props.navComponent.setNavItems({
+      title: {
+        component: (
+          <TouchableOpacity style={[style.navItem, {marginRight: 7}]}>
+            <Image style={{width: 20, height: 20}} source={{uri: shareImg}}/>
+          </TouchableOpacity>
+        ),
+        event: function() {
+          AlertIOS.alert('The event comes from title on NavBar');
+        }.bind(this)
+      }
+    });
+  }
   pushPage() {
     this.props.navigator.push({
       title: 'New Page',
@@ -162,6 +177,8 @@ class TabTwo extends Component {
   render() {
     return (
       <View style={style.tabContentStyle}>
+        <Image style={[style.arrowImage, {left: 50, top: -50, transform:[{rotate: '-75deg'},{scale: .5}]}]} source={{uri: arrowImg}}/>
+        <Text style={[style.textStyle, {marginTop: -50, marginBottom: 50}]}>Title bar can be customized with click event</Text>
         <Text style={style.textStyle}>This is the content of Tab 2</Text>
         <Text style={[style.textStyle, {marginBottom: 0}]}>A good implementation of</Text>
         <Text style={style.textStyle}>hidesBottomBarWhenPushed</Text>

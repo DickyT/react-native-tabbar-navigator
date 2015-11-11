@@ -33,18 +33,15 @@ class TabBarNavigator extends Component {
     super(props);
 
     this.state = {
-      rootNavigatorTitle: 'Default Title',
-      forceReRender: true
+      rootNavigatorTitle: '默认标题',
+      currentTabIndex: 0
     };
-    this.currentView = null;
     this.navItems = {};
     this.navRouter = {};
     this.currentRoute = null;
+    this.rootNavigatorItems = [];
 
-    this.setNavigatorRouter();
-  }
-  setNavigatorRouter() {
-    let self = this;
+    var self = this;
     this.navRouter = {
       LeftButton(route, navigator, index, navState) {
         if (!route.isRoot) {
@@ -63,32 +60,66 @@ class TabBarNavigator extends Component {
             );
           }
         }
+        else {
+          var navItems = self.rootNavigatorItems;
+          var currentIndex = self.state.currentTabIndex;
+          if (navItems[currentIndex] && navItems[currentIndex].leftItem) {
+            return React.cloneElement(navItems[currentIndex].leftItem.component, {
+              onPress: () => {navItems[currentIndex].leftItem.event(self.popThisNavigator.bind(self, navigator))}
+            });
+          }
+        }
       },
       RightButton(route, navigator, index, navState) {
-        if (route.navItems) {
-          if (route.navItems.rightItem) {
+        if (!route.isRoot) {
+          if (route.navItems && route.navItems.rightItem) {
             return React.cloneElement(route.navItems.rightItem.component, {
               onPress: () => {route.navItems.rightItem.event()}
             });
           }
         }
+        else {
+          var navItems = self.rootNavigatorItems;
+          var currentIndex = self.state.currentTabIndex;
+          if (navItems[currentIndex] && navItems[currentIndex].rightItem) {
+            return React.cloneElement(navItems[currentIndex].rightItem.component, {
+              onPress: () => {navItems[currentIndex].rightItem.event(self.popThisNavigator.bind(self, navigator))}
+            });
+          }
+        }
       },
       Title(route, navigator, index, navState) {
-        if (route.navItems && route.navItems.title) {
-          return React.cloneElement(route.navItems.title.component);
+        if (!route.isRoot) {
+          if (route.navItems && route.navItems.title) {
+            return React.cloneElement(route.navItems.title.component, {
+              onPress: () => {route.navItems.title.event()}
+            });
+          }
         }
         else {
-          return (
-            <Text style={{flex: 1, justifyContent: 'center', color: self.props.navTintColor ? self.props.navTintColor : 'ffffff', marginTop: 12, fontSize: 18}}>
-              {route.isRoot ? self.state.rootNavigatorTitle : route.title}
-            </Text>
-          );
+          var navItems = self.rootNavigatorItems;
+          var currentIndex = self.state.currentTabIndex;
+          if (navItems[currentIndex] && navItems[currentIndex].title) {
+            return React.cloneElement(navItems[currentIndex].title.component, {
+              onPress: () => {navItems[currentIndex].title.event(self.popThisNavigator.bind(self, navigator))}
+            });
+          }
         }
+        return (
+          <Text style={{flex: 1, justifyContent: 'center', color: self.props.navTintColor ? self.props.navTintColor : 'ffffff', fontSize: 17, marginTop: 12}}>
+            {route.isRoot ? self.state.rootNavigatorTitle : route.title}
+          </Text>
+        );
       }
     };
   }
   setNavItems(config) {
-    this.currentRoute.navItems = config;
+    if (this.currentRoute.isRoot) {
+      this.rootNavigatorItems[this.state.currentTabIndex] = config;
+    }
+    else {
+      this.currentRoute.navItems = config;
+    }
   }
   popThisNavigator(navigator) {
     this.resetNavItems();
