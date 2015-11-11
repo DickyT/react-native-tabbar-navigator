@@ -84,10 +84,7 @@ class AnotherNewPage extends Component {
                 selectedIndex={1}
             />
           </View>
-        ),
-        event: function() {
-
-        }
+        )
       }
     });
   }
@@ -119,13 +116,6 @@ class NewPage extends Component {
   constructor(props) {
     super(props);
     this.props.navComponent.setNavItems({
-      title: {
-        component: (
-          <Text style={{flex: 1, justifyContent: 'center', color: 'ffffff', marginTop: 12, fontSize: 18}}>
-            New Page
-          </Text>
-        )
-      },
       rightItem: {
         component: (
           <TouchableOpacity style={[style.navItem, {marginRight: 7}]}>
@@ -163,36 +153,6 @@ class NewPage extends Component {
 }
 
 class TabTwo extends Component {
-  constructor(props) {
-    super(props);
-    this.props.navComponent.setNavItems({
-      title: {
-        component: (
-          <View
-            style={styles.segmentControlContainer} >
-            <SegmentedControlIOS
-                style={ styles.segmentControl }
-                values={['One', 'Two']}
-                selectedIndex={1}
-            />
-          </View>
-        ),
-        event: function() {
-
-        }
-      },
-      rightItem: {
-        component: (
-          <TouchableOpacity style={[style.navItem, {marginRight: 7}]}>
-            <Image style={{width: 20, height: 20}} source={{uri: shareImg}}/>
-          </TouchableOpacity>
-        ),
-        event: function() {
-          AlertIOS.alert('The event comes from Share Button on NavBar');
-        }.bind(this)
-      }
-    });
-  }
   pushPage() {
     this.props.navigator.push({
       title: 'New Page',
