@@ -33,13 +33,14 @@ class TabBarNavigator extends Component {
     super(props);
 
     this.state = {
-      rootNavigatorTitle: '默认标题',
+      rootNavigatorTitle: '',
       currentTabIndex: 0
     };
     this.navItems = {};
     this.navRouter = {};
     this.currentRoute = null;
-    this.rootNavigatorItems = [];
+    this.rootNavigatorItems = {};
+    this.currentTabIndex = 0;
 
     var self = this;
     this.navRouter = {
@@ -62,7 +63,7 @@ class TabBarNavigator extends Component {
         }
         else {
           var navItems = self.rootNavigatorItems;
-          var currentIndex = self.state.currentTabIndex;
+          var currentIndex = self.currentTabIndex;
           if (navItems[currentIndex] && navItems[currentIndex].leftItem) {
             return React.cloneElement(navItems[currentIndex].leftItem.component, {
               onPress: () => {navItems[currentIndex].leftItem.event(self.popThisNavigator.bind(self, navigator))}
@@ -80,7 +81,7 @@ class TabBarNavigator extends Component {
         }
         else {
           var navItems = self.rootNavigatorItems;
-          var currentIndex = self.state.currentTabIndex;
+          var currentIndex = self.currentTabIndex;
           if (navItems[currentIndex] && navItems[currentIndex].rightItem) {
             return React.cloneElement(navItems[currentIndex].rightItem.component, {
               onPress: () => {navItems[currentIndex].rightItem.event(self.popThisNavigator.bind(self, navigator))}
@@ -114,8 +115,10 @@ class TabBarNavigator extends Component {
     };
   }
   setNavItems(config) {
+    console.log('setting nav items. currentTabIndex: ' + this.currentTabIndex);
     if (this.currentRoute.isRoot) {
       this.rootNavigatorItems[this.state.currentTabIndex] = config;
+      this.forceUpdate();
     }
     else {
       this.currentRoute.navItems = config;

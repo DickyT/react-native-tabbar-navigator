@@ -152,6 +152,40 @@ class NewPage extends Component {
   }
 }
 
+class TabOne extends Component {
+  constructor(props) {
+    super(props);
+    this.props.navComponent.setNavItems({
+      title: {
+        component: (
+          <View
+            style={styles.segmentControlContainer} >
+            <SegmentedControlIOS
+                style={ styles.segmentControl }
+                values={['Pinned', 'All']}
+                selectedIndex={1}
+            />
+          </View>
+        ),
+        event: function() {
+          AlertIOS.alert('The event comes from title on NavBar');
+        }.bind(this)
+      }
+    });
+  }
+  render() {
+    return (
+      <View style={style.tabContentStyle}>
+            <Text style={style.textStyle}>This is the content of Tab 1</Text>
+            <Text style={style.textStyle}>Automatically marginTop = 64</Text>
+            <Text style={style.textStyle}>TabBarNavigator.Item is the OnlyChild</Text>
+            <Text style={style.textStyle}>You can wrap everything inside {'<View></View>'}</Text>
+            <Text style={style.textStyle}>Slide to back is fully supported</Text>
+      </View> 
+    );
+  }
+}
+
 class TabTwo extends Component {
   constructor(props) {
     super(props);
@@ -201,16 +235,10 @@ class TabBarNavigatorExample extends Component {
         tabTintColor='orange'
         tabBarTintColor='333333'
         onChange={(index)=>console.log(`selected index ${index}`)}>
-        <TabBarNavigator.Item title='Tab 1' icon={{uri: base64Icon, scale: 3}}>
-          <View style={style.tabContentStyle}>
-            <Text style={style.textStyle}>This is the content of Tab 1</Text>
-            <Text style={style.textStyle}>Automatically marginTop = 64</Text>
-            <Text style={style.textStyle}>TabBarNavigator.Item is the OnlyChild</Text>
-            <Text style={style.textStyle}>You can wrap everything inside {'<View></View>'}</Text>
-            <Text style={style.textStyle}>Slide to back is fully supported</Text>
-          </View>
+        <TabBarNavigator.Item title='First' icon={{uri: base64Icon, scale: 3}} defaultTab>
+          <TabOne />
         </TabBarNavigator.Item>
-        <TabBarNavigator.Item title='Tab 2' defaultTab>
+        <TabBarNavigator.Item title='Second' icon={{uri: base64Icon, scale: 3}}>
           <TabTwo/>
         </TabBarNavigator.Item>
       </TabBarNavigator>
