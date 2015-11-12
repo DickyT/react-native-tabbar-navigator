@@ -14,81 +14,6 @@ var {
 
 var MainTabBar = require('./MainTabBar');
 
-// hacking for disabling the y scale problem, make it more similar to NavigatorIOS
-
-import Dimensions from 'Dimensions';
-import PixelRatio from 'PixelRatio';
-import buildStyleInterpolator from 'buildStyleInterpolator';
-
-var newFadeToLeft = {
-  // Rotate *requires* you to break out each individual component of
-  // rotation (x, y, z, w)
-  transformTranslate: {
-    from: {x: 0, y: 0, z: 0},
-    to: {x: -Math.round(Dimensions.get('window').width * 0.3), y: 0, z: 0},
-    min: 0,
-    max: 1,
-    type: 'linear',
-    extrapolate: true,
-    round: PixelRatio.get()
-  },
-  // Uncomment to try rotation:
-  // Quick guide to reasoning about rotations:
-  // http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-17-quaternions/#Quaternions
-  // transformRotateRadians: {
-  //   from: {x: 0, y: 0, z: 0, w: 1},
-  //   to: {x: 0, y: 0, z: -0.47, w: 0.87},
-  //   min: 0,
-  //   max: 1,
-  //   type: 'linear',
-  //   extrapolate: true
-  // },
-  transformScale: {
-    from: {x: 1, y: 1, z: 1},
-    to: {x: 0.95, y: 1, z: 1},
-    min: 0,
-    max: 1,
-    type: 'linear',
-    extrapolate: true
-  },
-  opacity: {
-    from: 1,
-    to: 0.3,
-    min: 0,
-    max: 1,
-    type: 'linear',
-    extrapolate: false,
-    round: 100,
-  },
-  translateX: {
-    from: 0,
-    to: -Math.round(Dimensions.get('window').width * 0.3),
-    min: 0,
-    max: 1,
-    type: 'linear',
-    extrapolate: true,
-    round: PixelRatio.get()
-  },
-  scaleX: {
-    from: 1,
-    to: 0.95,
-    min: 0,
-    max: 1,
-    type: 'linear',
-    extrapolate: true
-  },
-  scaleY: {
-    from: 1,
-    to: 0.95,
-    min: 0,
-    max: 1,
-    type: 'linear',
-    extrapolate: true
-  }
-};
-
-Navigator.SceneConfigs.FloatFromRight.animationInterpolators.out = buildStyleInterpolator(newFadeToLeft);
-
 var style = StyleSheet.create({
   flexEnabled: {
     flex: 1
@@ -98,6 +23,15 @@ var style = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingLeft: 7
+  },
+  sceneStyle: {
+    shadowColor: '000000',
+    shadowOpacity: .5,
+    shadowOffset: {
+      height: 1,
+      width: 0
+    },
+    overflow: 'visible'
   }
 });
 
@@ -221,11 +155,7 @@ class TabBarNavigator extends Component {
       navigator: navigator,
       navComponent: this
     });
-    return (
-      <View style={{flex: 1, marginTop: 64}}>
-        {newComponent}
-      </View>
-    );
+    return newComponent;
   }
   render() {
     var initialRoute = {
@@ -248,6 +178,7 @@ class TabBarNavigator extends Component {
         initialRoute={initialRoute}
         renderScene={this.renderScene.bind(this)}
         navigationBar={navBar}
+        sceneStyle={style.sceneStyle}
         />
     );
   }
