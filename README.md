@@ -11,6 +11,8 @@ You can check out the sample App in React Native Playground
 ![react-native-tab](https://cloud.githubusercontent.com/assets/4535844/11086164/84be9b10-8824-11e5-8cf3-69ce3d01cb57.gif)
 
 ## UPDATEs
+0.2.6 Disabling the wired Y scale when pushing the view, which make it more similar to `NavigatorIOS`
+
 0.2.4 Fixed a logical bug which caused a re-render issue.
 
 0.2.3 New feature by `@aerofs`, title component can be customize now.
