@@ -31,7 +31,9 @@ var style = StyleSheet.create({
       height: 1,
       width: 0
     },
-    overflow: 'visible'
+    overflow: 'visible',
+    flex: 1,
+    marginTop: 64
   }
 });
 
