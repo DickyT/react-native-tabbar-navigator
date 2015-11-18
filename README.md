@@ -11,6 +11,8 @@ You can check out the sample App in React Native Playground
 ![react-native-tab](https://cloud.githubusercontent.com/assets/4535844/11086164/84be9b10-8824-11e5-8cf3-69ce3d01cb57.gif)
 
 ## UPDATEs
+0.3.0 Test with several projects, and no obviously bug, so `0.3.0` will be a stable version.
+
 0.2.8 Added a shadow style, make it more native, [preview](https://github.com/DickyT/react-native-tabbar-navigator/wiki/Description-of-0.2.8) 
 
 0.2.7 Remove the hack on last commit, [reason](https://github.com/DickyT/react-native-tabbar-navigator/wiki/Description-of-removing-the-scale-hack)
