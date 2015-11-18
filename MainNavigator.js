@@ -34,7 +34,7 @@ var style = StyleSheet.create({
     overflow: 'visible',
     flex: 1,
     marginTop: 64,
-    backgroundColor: 'ffffff
+    backgroundColor: 'ffffff'
   }
 });
 

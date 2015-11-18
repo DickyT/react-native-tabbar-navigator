@@ -72,6 +72,7 @@ class MainTabBar extends Component {
       });
       items.push(
         <TabBarIOS.Item
+          key={i}
           title={eachData.title}
           icon={eachData.icon}
           selected={self.state.selectedTab === eachData.id}
