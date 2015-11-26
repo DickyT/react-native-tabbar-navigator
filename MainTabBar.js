@@ -34,6 +34,7 @@ class MainTabBar extends Component {
         id: index,
         title: eachChild.props.title,
         icon: eachChild.props.icon,
+        selectedIcon: eachChild.props.selectedIcon,
         component: eachChild.props.children
       };
       this.tabBarData.push(eachTabBarData);
@@ -75,6 +76,7 @@ class MainTabBar extends Component {
           key={i}
           title={eachData.title}
           icon={eachData.icon}
+          selectedIcon={eachData.selectedIcon}
           selected={self.state.selectedTab === eachData.id}
           onPress={self.switchTab.bind(self, eachData.id, eachData.title, i)}>
           {eachComponent}
