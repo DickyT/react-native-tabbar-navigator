@@ -34,6 +34,9 @@ Installation
 
 ```npm install react-native-tabbar-navigator --save```
 
+**the version on `npm` will be slower than github, because the version on `npm` will be the stable version, if you want the latest version, you can do this**
+```npm install DickyT/react-native-tabbar-navigator```
+
 Usage
 -----
 ```jsx
