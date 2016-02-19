@@ -78,12 +78,13 @@ class TabBarNavigator extends Component {
           var currentIndex = self.currentTabIndex;
           if (navItems[currentIndex] && navItems[currentIndex].leftItem) {
             return React.cloneElement(navItems[currentIndex].leftItem.component, {
-              onPress: () => {navItems[currentIndex].leftItem.event()}
+              onPress: () => {navItems[currentIndex].leftItem.event && navItems[currentIndex].leftItem.event()}
             });
           }
         }
       },
       RightButton(route, navigator, index, navState) {
+
         if (!route.isRoot) {
           if (route.navItems && route.navItems.rightItem) {
             return React.cloneElement(route.navItems.rightItem.component, {
@@ -96,7 +97,7 @@ class TabBarNavigator extends Component {
           var currentIndex = self.currentTabIndex;
           if (navItems[currentIndex] && navItems[currentIndex].rightItem) {
             return React.cloneElement(navItems[currentIndex].rightItem.component, {
-              onPress: () => {navItems[currentIndex].rightItem.event()}
+              onPress: () => {navItems[currentIndex].rightItem.event && navItems[currentIndex].rightItem.event()}
             });
           }
         }
@@ -114,7 +115,7 @@ class TabBarNavigator extends Component {
           var currentIndex = self.state.currentTabIndex;
           if (navItems[currentIndex] && navItems[currentIndex].title) {
             return React.cloneElement(navItems[currentIndex].title.component, {
-              onPress: () => {navItems[currentIndex].title.event()}
+              onPress: () => {navItems[currentIndex].title.event && navItems[currentIndex].title.event()}
             });
           }
         }
