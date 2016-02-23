@@ -25,7 +25,7 @@ var style = StyleSheet.create({
     paddingLeft: 7
   },
   sceneStyle: {
-    shadowColor: '000000',
+    shadowColor: '#000000',
     shadowOpacity: .5,
     shadowOffset: {
       height: 1,
@@ -34,7 +34,7 @@ var style = StyleSheet.create({
     overflow: 'visible',
     flex: 1,
     marginTop: 64,
-    backgroundColor: 'ffffff'
+    backgroundColor: '#ffffff'
   }
 });
 
