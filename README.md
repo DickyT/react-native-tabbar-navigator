@@ -1,5 +1,7 @@
 React Native TabBar Navigator (iOS only)
 ===================
+0.40 Support in progress, will release in a few days
+===================
 [![npm version](https://badge.fury.io/js/react-native-tabbar-navigator.svg)](https://badge.fury.io/js/react-native-tabbar-navigator)
 [![MIT](https://img.shields.io/dub/l/vibe-d.svg)]()
 
