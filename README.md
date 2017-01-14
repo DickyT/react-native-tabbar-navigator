@@ -1,18 +1,18 @@
 React Native TabBar Navigator (iOS only)
 ===================
-0.40 Support in progress, will release in a few days
-===================
 [![npm version](https://badge.fury.io/js/react-native-tabbar-navigator.svg)](https://badge.fury.io/js/react-native-tabbar-navigator)
 [![MIT](https://img.shields.io/dub/l/vibe-d.svg)]()
 
+![PREVIEW](https://cloud.githubusercontent.com/assets/4535844/21953824/7924d0b2-da17-11e6-8001-caad1150fdcc.gif)
+
 A component which builds excellent Navigator(NavigationController) + TabBar(TabBarController) based application, have a good solution for implementing **hidesBottomBarWhenPushed** in iOS.
 
-You can check out the sample App in React Native Playground
-[https://rnplay.org/apps/XCZoBw](https://rnplay.org/apps/XCZoBw)
-
-![react-native-tab](https://cloud.githubusercontent.com/assets/4535844/11086164/84be9b10-8824-11e5-8cf3-69ce3d01cb57.gif)
+## SPECIAL NOTE FOR 0.4.0
+Please don't update to 0.4.0 if you are using previous version of this plugin, because the way to use it is completely different. Document is not yet finished, but a Demo App is available [Here](https://github.com/DickyT/react-native-tabbar-navigator/wiki/%5B0.4.0%5DDemo-App-of-0.4.0-updated,-supports-React-Native-0.40)
 
 ## UPDATEs
+0.4.0 Supports React Native `0.40`, optimized usages.
+
 0.3.0 Test with several projects, and no obviously bug, so `0.3.0` will be a stable version.
 
 0.2.8 Added a shadow style, make it more native, [preview](https://github.com/DickyT/react-native-tabbar-navigator/wiki/Description-of-0.2.8) 
@@ -28,6 +28,8 @@ You can check out the sample App in React Native Playground
 0.2 Stable Version
 
 0.1 Project First Commit
+
+## Installation Guide (DEPRECATED)
 
 Installation
 -------
