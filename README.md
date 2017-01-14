@@ -113,4 +113,4 @@ My email `me@idickyt.com`
 
 Facebook [Dicky Tsang](https://www.facebook.com/idickytsang)
 
-Sina Weibo `@桐乃`
+Sina Weibo [@桐乃](https://weibo.com/kirinokousaka)
