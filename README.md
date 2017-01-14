@@ -29,16 +29,9 @@ Please don't update to 0.4.0 if you are using previous version of this plugin, b
 
 0.1 Project First Commit
 
-## Installation Guide (DEPRECATED)
-
-Installation
--------
+## Installation
 
 ```cd``` to your React Native project directory and run
-
-```npm install react-native-tabbar-navigator --save```
-
-**The version on `npm` will be slower than github, because the version on `npm` will be the stable version, if you want the latest version, you can do this**
 
 ```npm i --save react-native-tabbar-navigator```
 
