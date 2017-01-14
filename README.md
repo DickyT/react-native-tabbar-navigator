@@ -98,7 +98,7 @@ function RootView() {
 For more advanced examples, please check out the example app.
 
 ## How to run the example App?
-XCode.
+Xcode.
 
 Questions
 --------------
