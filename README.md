@@ -102,7 +102,7 @@ Property | Description | Type | Default
 -------- | ----------- | ---- | -------
 navBarTintColor | Default font color of navigation bar. | string | '#FFFFFF'
 navTintColor | Default background color of navigation bar. | string | '#FF2D55'
-children | *ONLY* accepts `<TabNavigator.Item/>`s as children components. | Array\<React.Component\> | []
+children | *ONLY* accepts `<TabNavigator.Item/>`s as children components. | Array\<`React.Component`\> | []
 ...props | The other props that passed to this Component is directly passed to the corresponding `<Navigator/>` and override *any* default props in this plugin. Be sure to read the source code first, or you should not override the props below: `style`, `initialRoute`, `renderScene`, `navigationBar`, `sceneStyle`.
 
 `<TabNavigator.Item/>`
