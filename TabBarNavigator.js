@@ -83,7 +83,8 @@ class TabBarNavigator extends Component {
     this.navBar = (
       <Navigator.NavigationBar
         style={[__STYLE.navBar, { backgroundColor: this.props.navBarTintColor }]}
-        routeMapper={this.navRouter}/>
+        routeMapper={this.navRouter}
+        {...this.props.navBarProps}/>
     );
 
     // find defaultTab
@@ -191,7 +192,8 @@ class TabBarNavigator extends Component {
         initialRoute={this.initialRoute}
         renderScene={this.renderScene.bind(this)}
         navigationBar={this.navBar}
-        sceneStyle={__STYLE.sceneStyle}/>
+        sceneStyle={__STYLE.sceneStyle}
+        {...this.props}/>
     );
   }
 }
@@ -203,7 +205,7 @@ TabBarNavigator.propTypes = {
 };
 
 TabBarNavigator.defaultProps = {
-  navTintColor: '#ffffff',
+  navTintColor: '#FFFFFF',
   navBarTintColor: '#FF2D55',
   onChange: () => {}
 };
