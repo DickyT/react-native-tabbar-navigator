@@ -136,7 +136,7 @@ This is actually a `function` type. When this function is called, it will pass 3
 
 Order | Argument | Description | Type
 ----- | -------- | ----------- | ----
-1 | isRoot | Is root route or not, if it is root route, you should not call the 2nd `pop` argument. | bool
+1 | isRoot | Is root route or not, if it is root route, you should not call the 2nd `popHandler` argument. | bool
 2 | popHandler | A shortcut to `navigator.pop`, calling this can `pop` the current navigator. | function
 3 | navigator | The current navigator.
 
@@ -154,8 +154,7 @@ If something is undocumented here, and it is not clear with you, feel free to cr
 
 Anything else
 --------------
-Feel free to request new features, just create an issue.
-It will be very welcome to pull request for me.
+Open a new issue to report bugs or request new features. Feel free to create Pull Request, I will be happy to merge if it is a good PR.
 
 My email `me@idickyt.com`
 
