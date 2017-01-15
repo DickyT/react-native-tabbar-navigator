@@ -112,7 +112,7 @@ Property | Description | Type | Default
 title | Title of the corresponding Tab and Navigation Title. You can customize Navigation Title by `navItems` property. | string
 defaultTab | Set this Item as default selcted tab. | bool | false
 navItems | Detailed API below. | Array\<`NavItemConfig`\> | *REQUIRED*
-children | *ONLY* accepts single child element. | React.Component | *REQUIRED*
+children | *ONLY* accepts single child element. | `React.Component` | *REQUIRED*
 ...props | The other props that passed to this Component is directly passed to the corresponding `<TabBarIOS.Item/>`.
 
 `NavItemConfig`
