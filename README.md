@@ -85,15 +85,61 @@ function RootView() {
       <TabNavigator.Item title='Tab One' icon={{uri: tabOneIcon, scale: 3}} navItems={navItems[0]} defaultTab>
         <TabOneIndex/>
       </TabNavigator.Item>
-      <TabNavigator.Item title='Tab Two' icon={{uri: tabTwoIcon, scale: 3}} navItems={navItems[1]}>
+      <TabNavigator.Item title='Tab Two' icon={{uri: tabTwoIcon, scale: 3}} navItems={navItems[1]} badge='999+'>
         <TabTwoIndex/>
       </TabNavigator.Item>
     </TabNavigator>
   );
 }
 ```
+### API
 
-## Advanced usage
+For this plugin, there are 2 components that you need to know.
+
+`<TabNavigator/>`
+
+Property | Description | Type | Default
+-------- | ----------- | ---- | -------
+navBarTintColor | Default font color of navigation bar. | string | '#FFFFFF'
+navTintColor | Default background color of navigation bar. | string | '#FF2D55'
+children | *ONLY* accepts `<TabNavigator.Item/>`s as children components. | Array\<React.Component\> | []
+...props | The other props that passed to this Component is directly passed to the corresponding `<Navigator/>` and override *any* default props in this plugin. Be sure to read the source code first, or you should not override the props below: `style`, `initialRoute`, `renderScene`, `navigationBar`, `sceneStyle`.
+
+`<TabNavigator.Item/>`
+
+Property | Description | Type | Default
+-------- | ----------- | ---- | -------
+title | Title of the corresponding Tab and Navigation Title. You can customize Navigation Title by `navItems` property. | string
+defaultTab | Set this Item as default selcted tab. | bool | false
+navItems | Detailed API below. | Array\<`NavItemConfig`\> | *REQUIRED*
+children | *ONLY* accepts single child element. | React.Component | *REQUIRED*
+...props | The other props that passed to this Component is directly passed to the corresponding `<TabBarIOS.Item/>`.
+
+`NavItemConfig`
+
+Property | Description | Type | Default
+-------- | ----------- | ---- | -------
+leftItem | Component settings for TopLeft navigation item. | `NavigationItem`
+rightItem | Component settings for TopRight navigation item. | `NavigationItem`
+title | Navigation title for corresponding Tab. | string \| `NavigationItem` | TabNavigator.Item.props.title
+
+`NavigationItem`
+Property | Description | Type | Default | Example
+-------- | ----------- | ---- | ------- | -------
+component | React Component for corresponding position. | React.Component | null | \<Text\>More\</Text\>
+onPress | This function is passed to the component `onPress` prop, make sure to receive `onPress` in `component` and handle it. | `NavigationItemEvent` | () => {} | (isRoot, pop) => { if (isRoot) pop() }
+
+`NavigationItemEvent`
+This is actually a `function` type. When this function is called, it will pass 3 arguments.
+
+Order | Argument | Description | Type
+----- | -------- | ----------- | ----
+1 | isRoot | Is root route or not, if it is root route, you should not call the 2nd `pop` argument. | bool
+2 | popHandler | A shortcut to `navigator.pop`, calling this can `pop` the current navigator. | function
+3 | navigator | The current navigator.
+
+
+### Advanced usage
 
 For more advanced examples, please check out the example app.
 
