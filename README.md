@@ -8,7 +8,7 @@ A component which builds excellent Navigator(NavigationController) + TabBar(TabB
 ![PREVIEW](https://cloud.githubusercontent.com/assets/4535844/21953824/7924d0b2-da17-11e6-8001-caad1150fdcc.gif)
 
 ## SPECIAL NOTE FOR 0.4.0
-Please don't update to 0.4.0 if you are using previous version of this plugin, because the way to use it is completely different. Document is not yet finished, but a Demo App is available [Here](https://github.com/DickyT/react-native-tabbar-navigator/wiki/%5B0.4.0%5DDemo-App-of-0.4.0-updated,-supports-React-Native-0.40)
+Please don't update to 0.4.0 if you are using previous version of this plugin, because the way to use it is completely different.
 
 ## UPDATEs
 0.4.0 Supports React Native `0.40`, optimized usages.
