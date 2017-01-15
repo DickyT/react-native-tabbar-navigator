@@ -94,6 +94,9 @@ function RootView() {
 ```
 ### API
 
+**NOTE**
+Be sure to know the basic usage of `<Navigator/>` and `<TabBarIOS/>`
+
 For this plugin, there are 2 components that you need to know.
 
 `<TabNavigator/>`
@@ -127,8 +130,8 @@ title | Navigation title for corresponding Tab. | string \| `NavigationItem` | T
 
 Property | Description | Type | Default | Example
 -------- | ----------- | ---- | ------- | -------
-component | React Component for corresponding position. | `React.Component` | null | \<Text\>More\</Text\>
-onPress | This function is passed to the component `onPress` prop, make sure to receive `onPress` in `component` and handle it. | `NavigationItemEvent` | () => {} | (isRoot, pop) => { if (isRoot) pop() }
+component | React Component for corresponding position. | `React.Component` | null | `<Text>More</Text>`
+onPress | This function is passed to the component `onPress` prop, make sure to receive `onPress` in `component` and handle it. | `NavigationItemEvent` | `() => {}` | `(isRoot, pop) => { if (isRoot) pop() }`
 
 `NavigationItemEvent`
 
