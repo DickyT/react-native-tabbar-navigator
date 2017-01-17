@@ -11,8 +11,7 @@ import {
   View,
   Navigator,
   TouchableOpacity,
-  Image,
-  NavigatorIOS
+  Image
 } from 'react-native';
 import RootTabBar from './RootTabBar';
 
@@ -70,7 +69,6 @@ class TabBarNavigator extends Component {
     super(props);
 
     this.state = {
-      rootRouteTitle: '',
       selectedTab: 0
     };
 
