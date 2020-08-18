@@ -1,7 +1,9 @@
-React Native TabBar Navigator (iOS only)
+React Native TabBar Navigator (aka React Native Tanner Navigator)
 ===================
 [![npm version](https://badge.fury.io/js/react-native-tabbar-navigator.svg)](https://badge.fury.io/js/react-native-tabbar-navigator)
 [![MIT](https://img.shields.io/dub/l/vibe-d.svg)]()
+
+**THIS PACKAGE IS NO LONGER MAINTAINED SINCE 2017 AND DOES NOT WORK WITH LATEST REACT NATIVE** 
 
 A component which builds excellent Navigator(NavigationController) + TabBar(TabBarController) based application, have a good solution for implementing **hidesBottomBarWhenPushed** in iOS.
 
